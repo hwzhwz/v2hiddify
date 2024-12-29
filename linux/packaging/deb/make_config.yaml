@@ -1,8 +1,8 @@
-display_name: Hiddify
-package_name: hiddify
+display_name: ntpizza
+package_name: ntpizza
 maintainer:
-  name: hiddify
-  email: linux@hiddify.com
+  name: ntpizza
+  email: linux@ntpizza.com
 
 priority: optional
 section: x11
@@ -11,12 +11,12 @@ essential: false
 icon: ./assets/images/source/ic_launcher_border.png
 
 postinstall_scripts:
-  - echo "Installed Hiddify"
+  - echo "Installed ntpizza"
 postuninstall_scripts:
   - echo "Surprised Why?"
 
 keywords:
-  - Hiddify
+  - ntpizza
   - Proxy
   - VPN
   - V2ray
@@ -25,7 +25,7 @@ keywords:
   - Psiphon
   - OpenVPN
 
-generic_name: Hiddify
+generic_name: ntpizza
 
 categories:
   - Network
