@@ -1,9 +1,9 @@
-display_name: Hiddify
-url: https://github.com/hiddify/hiddify-next/
+display_name: ntpizza
+url: https://github.com/ntpizza/ntpizza-next/
 license: Other
 
-packager: hiddify
-packagerEmail: linux@hiddify.com
+packager: ntpizza
+packagerEmail: linux@ntpizza.com
 
 priority: optional
 section: x11
@@ -12,7 +12,7 @@ essential: false
 icon: ./assets/images/source/ic_launcher_border.png
 
 keywords:
-  - Hiddify
+  - ntpizza
   - Proxy
   - VPN
   - V2ray
@@ -21,7 +21,7 @@ keywords:
   - Psiphon
   - OpenVPN
 
-generic_name: Hiddify
+generic_name: ntpizza
 
 group: Applications/Internet
 
