@@ -5,6 +5,7 @@ class AuthService {
   final HttpService _httpService = HttpService();
 
   Future<Map<String, dynamic>> login(String email, String password) async {
+    print("Email: $email, Password: $password");
     return await _httpService.postRequest(
       "/api/v1/passport/auth/login",
       {"email": email, "password": password},
