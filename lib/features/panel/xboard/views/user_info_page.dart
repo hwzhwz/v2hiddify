@@ -27,7 +27,7 @@ class _UserInfoPageState extends ConsumerState<UserInfoPage> {
     // ignore: unused_result
     ref.refresh(userTokenInfoProvider);
     // ignore: unused_result
-    ref.refresh(inviteCodesProvider);
+    //ref.refresh(inviteCodesProvider);
   }
 
   @override
@@ -49,7 +49,7 @@ class _UserInfoPageState extends ConsumerState<UserInfoPage> {
         // 等待所有需要的数据加载完毕再渲染视图
         future: Future.wait([
           ref.watch(userTokenInfoProvider.future),
-          ref.watch(inviteCodesProvider.future),
+          //ref.watch(inviteCodesProvider.future),
         ]),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -87,8 +87,8 @@ class _UserInfoPageState extends ConsumerState<UserInfoPage> {
                 SizedBox(height: 16),
                 AccountBalanceCard(),
                 SizedBox(height: 16),
-                InviteCodeSection(),
-                SizedBox(height: 16),
+                //InviteCodeSection(),
+                //SizedBox(height: 16),
                 ResetSubscriptionButton(),
               ],
             ),

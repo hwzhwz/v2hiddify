@@ -1,6 +1,6 @@
 {
     "general": {
-        "appTitle": "ntpizza回国加速",
+        "appTitle": "BoostNet",
         "reset": "Reset",
         "toggle": {
             "enabled": "Enabled",
@@ -37,7 +37,7 @@
         "pageTitle": "Home",
         "emptyProfilesMsg": "Start by adding a subscription profile",
         "noActiveProfileMsg": "Select a profile",
-        "noSubscriptionMsg": "No available subscription found. Please go to the purchase page to buy a plan.",
+        "noSubscriptionMsg": "No available subscription found. Please go to the purchase page to buy a plan.(If you have already purchased and this message is still displayed, please log out and log in again)",
         "goToPurchasePage": "Go to Purchase Page"
     },
     "purchase": {
