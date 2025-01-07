@@ -10,6 +10,7 @@ import 'package:hiddify/features/panel/xboard/utils/storage/token_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart'; // 用于格式化日期
 import 'package:hiddify/features/panel/xboard/services/purchase_service.dart';
+import 'package:hiddify/features/panel/xboard/views/components/dialog/payment_methods_dialog.dart';
 
 class OrderPage extends ConsumerStatefulWidget {
   const OrderPage({super.key});
