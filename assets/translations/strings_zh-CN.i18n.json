@@ -68,7 +68,7 @@
         "handlingFee": "手续费",
         "totalPrice": "总价格",
         "fee": "手续费",
-        "selectPaymentMethod": "选择支付方式",
+        "selectPaymentMethod": "选择支付方式（支付确认会有延迟）",
         "unknown": "未知",
         "noData": "无数据",
         "close": "关闭",

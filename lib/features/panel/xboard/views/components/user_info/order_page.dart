@@ -9,6 +9,7 @@ import 'package:hiddify/features/panel/xboard/services/http_service/order_servic
 import 'package:hiddify/features/panel/xboard/utils/storage/token_storage.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart'; // 用于格式化日期
+import 'package:hiddify/features/panel/xboard/services/purchase_service.dart';
 
 class OrderPage extends ConsumerStatefulWidget {
   const OrderPage({super.key});
@@ -104,8 +105,7 @@ class _OrderPageState extends ConsumerState<OrderPage> {
                             onLongPress: () {
                               Clipboard.setData(
                                 ClipboardData(
-                                  text:
-                                      order.tradeNo ?? t.order.statuses.unknown,
+                                  text: order.tradeNo ?? t.order.statuses.unknown,
                                 ),
                               );
                               _showSnackbar(context, t.order.orderNumberCopied);
@@ -223,12 +223,38 @@ class _OrderPageState extends ConsumerState<OrderPage> {
     }
   }
 
-  // 支付逻辑处理函数
-  void _handlePayment(Order order) {
+// 支付逻辑处理函数
+  Future<void> _handlePayment(Order order) async {
     if (kDebugMode) {
       print('Processing payment for order: ${order.tradeNo}');
     }
     // 支付处理逻辑
+    final accessToken = await getToken();
+    if (accessToken == null) {
+      print("Access token is null");
+      return;
+    }
+
+    final PurchaseService _purchaseService = PurchaseService();
+    final paymentMethods = await _purchaseService.getPaymentMethods(accessToken);
+
+    if (paymentMethods.isNotEmpty) {
+      // 弹出支付方式选择框
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return PaymentMethodsDialog(
+            tradeNo: order.tradeNo!, // 订单号
+            paymentMethods: paymentMethods, // 获取的支付方式列表
+            totalAmount: order.totalAmount, // 订单总金额
+            t: ref.watch(translationsProvider), // 本地化翻译
+            ref: ref, // 引用 provider
+          );
+        },
+      );
+    } else {
+      _showSnackbar(context, '没有支付方式可用');
+    }
   }
 
   // 取消订单逻辑处理函数
