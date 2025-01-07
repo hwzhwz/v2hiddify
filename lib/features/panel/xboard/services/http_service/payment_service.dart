@@ -5,11 +5,17 @@ class PaymentService {
   final HttpService _httpService = HttpService();
 
   Future<Map<String, dynamic>> submitOrder(
-      String tradeNo, String method, String accessToken,) async {
+    String tradeNo,
+    String method,
+    String accessToken,
+  ) async {
     return await _httpService.postRequest(
       "/api/v1/user/order/checkout",
       {"trade_no": tradeNo, "method": method},
-      headers: {'Authorization': accessToken},
+      headers: {
+        'Authorization': accessToken,
+        'Referer': 'https://66.com',
+      },
     );
   }
 
