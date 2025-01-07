@@ -247,7 +247,7 @@ class _OrderPageState extends ConsumerState<OrderPage> {
           return PaymentMethodsDialog(
             tradeNo: order.tradeNo!, // 订单号
             paymentMethods: paymentMethods, // 获取的支付方式列表
-            totalAmount: order.totalAmount, // 订单总金额
+            totalAmount: order.totalAmount ?? 0.0, // 订单总金额
             t: ref.watch(translationsProvider), // 本地化翻译
             ref: ref, // 引用 provider
           );
