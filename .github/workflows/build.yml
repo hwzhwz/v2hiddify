@@ -91,7 +91,13 @@ jobs:
         
       - name: Add flutter_distributor to PATH
         run: echo "${HOME}/.pub-cache/bin" >> $GITHUB_PATH
-
+      
+      - name: Install flutter_distributor
+        run: dart pub global activate flutter_distributor
+        
+      - name: Add flutter_distributor to PATH
+        run: echo "${HOME}/.pub-cache/bin" >> $GITHUB_PATH
+      
       - name: Install Dependencies
         run: |
           flutter pub get
